@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #faf6ec;
+  background-image:
+    linear-gradient(rgba(228, 220, 200, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(228, 220, 200, 0.5) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: #1c1b1f;
+}
+
+::selection {
+  background: #f0c878;
+  color: #1c1b1f;
+}
+
+:focus-visible {
+  outline: 2px solid #24314f;
+  outline-offset: 2px;
+}
+
+.pin-card {
+  position: relative;
+}
+
+.pin-card::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 22px;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: #d99c2b;
+  box-shadow: 0 2px 3px rgba(28, 27, 31, 0.35);
+}
+
+.pin-card:nth-child(3n + 1) {
+  transform: rotate(-0.6deg);
+}
+.pin-card:nth-child(3n + 2) {
+  transform: rotate(0.5deg);
+}
+.pin-card:nth-child(3n) {
+  transform: rotate(-0.3deg);
+}
+
+.pin-card:hover {
+  transform: rotate(0deg) translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pin-card,
+  * {
+    transition: none !important;
+  }
+}
